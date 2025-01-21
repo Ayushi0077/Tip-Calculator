@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        /* Base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .wrapper p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .wrapper input, 
+        .wrapper select {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        #calculate {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #calculate:hover {
+            background-color: #45a049;
+        }
+
+        .tip p {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #444;
+        }
+
+        #total {
+            font-size: 24px;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        #each {
+            font-size: 18px;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .wrapper p {
+                font-size: 16px;
+            }
+
+            #calculate {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>TIP CALCULATOR</h1>
+        <div class="wrapper">
+            <p>Bill Amount</p>
+            <input type="text" id="amount" placeholder="Amount to be paid"> ₹
+            <p>How was the service ?</p>
+            <select id="services">
+                <option selected disabled hidden>Select</option>
+                <option value="0.25">25% - Top Notch</option>
+                <option value="0.20">20% - Excellent</option>
+                <option value="0.15">15% - Good</option>
+                <option value="0.10">10% - Bad</option>
+                <option value="0.05">5% - Worst</option>
+            </select>
+            <p>Total number of persons</p>
+            <input type="text" id="persons" placeholder="Number of people sharing the bill">
+            <button id="calculate">Calculate</button>
+        </div>
+
+        <div class="tip">
+            <p>Tip Amount</p>
+            <span id="total">0</span>₹
+            <span id="each">each</span>
+        </div>
+    </div>
+    <script src="js/script.js" ></script>
+</body>
+</html>
